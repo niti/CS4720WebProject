@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>all things c-ville</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="carousel.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+  
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <header>
+      <h4><a href="home.html"> all things c-ville </a> - <a href ="index.html">resturants </a>| vineyards | cafes  </h4>
+    </header>
+
+   
+    <hr>
+  
+   <script type="text/javascript">
+      $( document ).ready( function() {   
+
+      $("#findResturantsButton").click(function() {
+          
+          $.ajax({
+              url: 'findResturants.php',
+              data: {name: $('#resturantname').val()},
+              success: function(data){
+                  $('#searchresults').html(data);
+
+              }
+          }); 
+        }); 
+
+            $("#findAllResturantsButton").click(function() {
+          
+          $.ajax({
+              url: 'allResturants.php',
+              data: {name: $('#resturantname').val()},
+              success: function(data){
+                  $('#searchresults').html(data);
+
+              }
+          }); 
+        }); 
+
+
+            $("#updateReview").click(function() {
+          
+          $.ajax({
+              url: 'updateReview.php',
+              data: {name: $('#updRest').val(), nameofRev: $('#updReviewer').val(), newRestReview: $('#updReview').val()},
+              success: function(data){
+                  $('#updresults').html(data);
+
+              }
+          }); 
+        }); 
+
+            $("#addReviewButton").click(function() {
+          
+          $.ajax({
+              url: 'addReview.php',
+              data: {Name: $('#addRest').val(), Review: $('#addRev').val(), Reviewer: $('#addFN').val()},
+              success: function(data){
+                  $('#addedReview').html(data);
+
+              }
+          }); 
+        }); 
+
+      });
+    </script>
+
+    <div class="container">
+    <h2 class="purple"> Explore  Charlottesville Resturants</h2>
+   <form id="search-form" role ="form">
+          <div class="form-group">
+              <input type="text" class="form-control" id="resturantname" placeholder="enter the name of the resturant such as Bodos, Virginian, Boylan, Trinity, Take it Away, Lemongrass">
+          </div>
+    </form>
+    <div class="btn-group">
+    <button type="submit" class="btn btn-success btn-lg center-block" id="findResturantsButton">Info</button>
+    <button type="submit" class="btn btn-default btn-lg center-block" id="findAllResturantsButton">View Reviews</button>
+    </div>
+    <div id="searchresults"></div>
+
+
+
+    <hr>
+    
+    <h2 class="blue"> Add a Review</h2>
+       <form role ="form">
+          <div class="form-group">
+              <input type="text" class="form-control" id="addFN" placeholder="First and Last Name">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control " id="addRest" placeholder="Name of Resturant">
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" rows="3" id ="addRev" placeholder="Enter your review here"></textarea>
+          </div>
+
+    </form>
+    <button type="submit" class="btn btn-info btn-lg center-block" id="addReviewButton">Submit</button>
+   <div id="addedReview"></div>
+
+
+
+    <h2 class="orange"> Need to Update your Review?</h2>
+
+          <form role ="form">
+          <div class="form-group">
+              <input type="text" class="form-control " id="updReviewer" placeholder="First and Last Name on the review">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control " id="updRest" placeholder="Name of Resturant that you want to update the review for">
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Enter your updated review here" id="updReview"></textarea>
+          </div>
+        </form>
+       <button type="submit" class="btn btn-warning btn-lg center-block" id="updateReview">Update</button>
+        <div id="updresults"></div>
+  </div>
+
+<hr>
+     <!-- FOOTER -->
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+  </body>
+</html>

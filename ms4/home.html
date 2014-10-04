@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>all things c-ville</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="carousel.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="main.js"></script>
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+    <header>
+      <h4> <a href="home.html">all things c-ville </a> - <a href ="index.html">resturants </a>| vineyards | cafes  </h4>
+    </header>
+
+    <!-- Carousel-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/pippinhills.png" alt="Pippin Hills">
+          <div class="container">
+            <div class="carousel-caption">
+              <p>vineryard | pippin hills</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/citzenburger.png" alt="Citzen Burger">
+          <div class="container">
+            <div class="carousel-caption">
+              <p> citzen burger | downtown cville</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/downtownmall.jpg" alt="Downtown Mall Charlottesville">
+          <div class="container">
+            <div class="carousel-caption">
+              <p> downtown cville </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+     <!-- ABOUT -->
+    <hr>
+    <div class = "container">
+      <h2> ABOUT </h2>
+
+      <p> charlottesville, virginia is located in center of the commonwealth of virginia, home to the university of virgina in a city immeresed with traditions with a southern charm and plenty of good food. 
+      </p>
+
+      <p>
+      the purpose of this website is to provide a central location to keep track of all the resturants, vineyards, cafes etc. around the university's historic grounds to downtown charlottesville for students, visitors, and locals.
+
+      it will allow for users to keep track of new specials, resturant openings, customer reviews for many vendors around c-ville. in all, it will serve as a tracking of all things food related in cville 
+    
+      </p>
+  
+
+    </div>
+    <hr>
+
+    <script type="text/javascript">
+      $( document ).ready( function() {   
+
+        $( "#resturant" ).hover(function() {
+          $( "#resturantinfo" ).toggle("slow");
+
+        });
+
+        $( "#vineyard" ).hover(function() {
+          $( "#vineyardinfo" ).toggle("slow");
+        });
+
+        $( "#cafes" ).hover(function() {
+          $( "#cafesinfo" ).toggle("slow");
+        });
+
+      });
+    </script>
+
+    <div class = "container">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img id="resturant" class="img-circle" src="http://citizenburgerbar.com/wp-content/uploads/2013/06/TCOcitizendish-00551cb0154ea46d.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Resturants</h2>
+          <p id="resturantinfo" style="display: none;">Restaurants from UVa's corner such as The Virginia to Boylan Heights to Downtown Charlottesville very finest Citizen Burger will be explored.</p>
+
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img id="vineyard" class="img-circle" src="http://www.miramontewinery.com/wp-content/themes/miramonte/img/pics/winery-vineyard6.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Vineyards</h2>
+          <p id="vineyardinfo" style="display: none;">Charlottesville surrounds itself near the Blue Ridge Mountains with a number of wonderful vineyards taking residence to offer a great afternoon outing to wedding spots around Charlottesville.</p>
+
+        </div>
+        <div class="col-lg-4">
+          <img id="cafes" class="img-circle" src="http://wilakesarea.com/wp-content/uploads/2014/08/roasted-coffee-beans-6.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+          <h2>Cafes</h2>
+          <p id="cafesinfo" style="display: none;">Coffee lovers all unite to Charlottesville. Reviews from all great cafes such as MudHouse downtown to Para coffee on the Uva Corner will help you find that very special coffee house for you.</p>
+
+        </div>
+      </div>
+  </div>
+
+  <hr>
+
+ <!-- FORM -->
+    <div class ="container" id="updateMeForm">
+      <h2> Update me when the site launches! </h2>
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" class="form-control" id="userName" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">@</div>
+          <input class="form-control" type="email" placeholder="Enter email" id="userEmail">
+        </div>
+      </div>
+      <button class="btn btn-default" type="button" onclick="Javascript:KeepMeUpdated()">Keep me updated!</button>
+    </form>
+  </div>
+<hr>
+     <!-- FOOTER -->
+    <div class="container">
+ 
+      <footer>
+        <p> niti paudyal | np8bx | uva computer science '16</p>
+      </footer>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+  </body>
+</html>
